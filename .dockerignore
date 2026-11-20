@@ -1,0 +1,17 @@
+# Never send local secrets or large generated folders in the Docker build context
+.git
+.env
+.env.*
+!.env.example
+.venv
+venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/node_modules
+frontend/dist
+*.key
+*.pem
+*.p12
+*.pfx
+*.log

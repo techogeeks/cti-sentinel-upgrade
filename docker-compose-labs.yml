@@ -1,0 +1,13 @@
+# Isolated local single-node replica set for Chapter 10 transaction experiments.
+# Not suitable for production. Only bound to loopback on the Windows host.
+services:
+  mongo-labs:
+    image: mongo:7
+    container_name: cti-mongo-labs
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "127.0.0.1:27019:27017"
+    volumes:
+      - cti-lab-mongo-data:/data/db
+volumes:
+  cti-lab-mongo-data:
